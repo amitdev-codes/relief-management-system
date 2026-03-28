@@ -1,0 +1,41 @@
+.flex {
+    display: flex;
+
+    &--center {
+        @include flex-center;
+    }
+
+    &--between {
+        justify-content: space-between;
+    }
+}
+
+.mt {
+    &-1 {
+        margin-top: $spacing-unit;
+    }
+    &-2 {
+        margin-top: $spacing-unit * 2;
+    }
+    &-3 {
+        margin-top: $spacing-unit * 3;
+    }
+    &-4 {
+        margin-top: $spacing-unit * 4;
+    }
+}
+
+.mb {
+    &-1 {
+        margin-bottom: $spacing-unit;
+    }
+    &-2 {
+        margin-bottom: $spacing-unit * 2;
+    }
+    &-3 {
+        margin-bottom: $spacing-unit * 3;
+    }
+    &-4 {
+        margin-bottom: $spacing-unit * 4;
+    }
+}

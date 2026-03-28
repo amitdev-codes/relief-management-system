@@ -1,0 +1,226 @@
+// DataTable.scss
+
+@mixin breakpoint($point) {
+    @if $point == xs {
+        @media (max-width: 599px) {
+            @content;
+        }
+    } @else if $point == sm {
+        @media (min-width: 600px) and (max-width: 959px) {
+            @content;
+        }
+    } @else if $point == md {
+        @media (min-width: 960px) and (max-width: 1279px) {
+            @content;
+        }
+    } @else if $point == lg {
+        @media (min-width: 1280px) and (max-width: 1919px) {
+            @content;
+        }
+    } @else if $point == xl {
+        @media (min-width: 1920px) and (max-width: 3839px) {
+            @content;
+        }
+    } @else if $point == xxl {
+        @media (min-width: 3840px) {
+            @content;
+        }
+    }
+}
+
+.data-table-container {
+    width: 100%;
+    margin-top: 2rem;
+
+    @include breakpoint(xs) {
+        margin-top: 1rem;
+    }
+
+    .MuiCard-root {
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .MuiCardHeader-root {
+        background-color: var(--primary-main);
+        color: var(--primary-contrast-text);
+        @include breakpoint(xs) {
+            padding: 0.75rem;
+        }
+        @include breakpoint(sm) {
+            padding: 1rem;
+        }
+        @include breakpoint(md) {
+            padding: 1.5rem;
+        }
+        @include breakpoint(lg) {
+            padding: 1.75rem;
+        }
+        @include breakpoint(xl) {
+            padding: 2rem;
+        }
+        @include breakpoint(xxl) {
+            padding: 2.5rem;
+        }
+    }
+
+    .MuiCardContent-root {
+        @include breakpoint(xs) {
+            padding: 0.5rem;
+        }
+        @include breakpoint(sm) {
+            padding: 0.75rem;
+        }
+        @include breakpoint(md) {
+            padding: 1rem;
+        }
+        @include breakpoint(lg) {
+            padding: 1.25rem;
+        }
+        @include breakpoint(xl) {
+            padding: 1.5rem;
+        }
+        @include breakpoint(xxl) {
+            padding: 2rem;
+        }
+    }
+
+    .MuiDataGrid-root {
+        width: 100%;
+
+        .MuiDataGrid-main {
+            width: 100%;
+        }
+
+        .MuiDataGrid-cell {
+            border-bottom: 1px solid var(--divider);
+            white-space: normal;
+            word-break: break-word;
+
+            @include breakpoint(xs) {
+                padding: 4px;
+                font-size: 11px;
+            }
+            @include breakpoint(sm) {
+                padding: 6px;
+                font-size: 12px;
+            }
+            @include breakpoint(md) {
+                padding: 8px;
+                font-size: 13px;
+            }
+            @include breakpoint(lg) {
+                padding: 10px;
+                font-size: 14px;
+            }
+            @include breakpoint(xl) {
+                padding: 12px;
+                font-size: 15px;
+            }
+            @include breakpoint(xxl) {
+                padding: 16px;
+                font-size: 18px;
+            }
+        }
+
+        .MuiDataGrid-row {
+            max-height: none !important;
+        }
+
+        .MuiDataGrid-columnHeaders {
+            background-color: var(--primary-light);
+            border-bottom: none;
+            font-family: "Kalimati", sans-serif;
+            font-weight: 700;
+
+            @include breakpoint(xs) {
+                font-size: 12px;
+            }
+            @include breakpoint(sm) {
+                font-size: 13px;
+            }
+            @include breakpoint(md) {
+                font-size: 14px;
+            }
+            @include breakpoint(lg) {
+                font-size: 15px;
+            }
+            @include breakpoint(xl) {
+                font-size: 16px;
+            }
+            @include breakpoint(xxl) {
+                font-size: 20px;
+            }
+        }
+
+        .MuiDataGrid-virtualScroller {
+            background-color: var(--background-default);
+        }
+
+        .MuiDataGrid-footerContainer {
+            background-color: var(--primary-main);
+            color: var(--primary-contrast-text);
+            border-top: none;
+        }
+
+        .MuiDataGrid-toolbarContainer {
+            .MuiButton-text {
+                color: var(--primary-main) !important;
+            }
+
+            @include breakpoint(xs) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        .MuiDataGrid-menuList {
+            padding-bottom: 0;
+        }
+
+        .MuiMenuItem-root {
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+    }
+}
+
+.status-chip {
+    &.active {
+        background-color: var(--success-main);
+        color: var(--success-contrast-text);
+    }
+
+    &.inactive {
+        background-color: var(--error-main);
+        color: var(--error-contrast-text);
+    }
+}
+
+@include breakpoint(xxl) {
+    .data-table-container {
+        .MuiButton-root {
+            font-size: 1.5rem;
+            padding: 12px 24px;
+        }
+
+        .MuiDataGrid-root {
+            .MuiDataGrid-columnHeaders {
+                height: 80px;
+            }
+
+            .MuiDataGrid-cell {
+                height: 60px;
+            }
+
+            .MuiDataGrid-footerContainer {
+                height: 80px;
+            }
+        }
+    }
+}
+
+.avatar-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}

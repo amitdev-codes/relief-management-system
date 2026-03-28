@@ -1,0 +1,37 @@
+// header.scss
+
+.header {
+    &__logo {
+        height: 40px;
+        margin-right: 16px;
+    }
+
+    &__title {
+        font-family: "Kalimati", sans-serif;
+    }
+
+    &__subtitle {
+        font-family: "Kalimati", sans-serif;
+    }
+
+    &__center-text {
+        font-family: "Kalimati", sans-serif;
+        text-align: center;
+    }
+
+    &__nepali-time {
+        margin-right: 8px;
+    }
+
+    &__flag {
+        height: 30px;
+        margin: 0 8px;
+    }
+
+    &__login-button {
+        margin-left: 8px;
+    }
+    &__theme-toggle {
+        margin: 0 8px;
+    }
+}

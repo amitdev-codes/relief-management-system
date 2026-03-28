@@ -1,0 +1,156 @@
+@use "sass:map";
+@use "@material-ui/core/styles/breakpoints";
+
+$breakpoints: (
+    xs: 0px,
+    sm: 600px,
+    md: 960px,
+    lg: 1280px,
+    xl: 1920px,
+);
+
+@mixin respond-to($breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+.authenticated-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1201;
+
+    @include respond-to(md) {
+        top: 80px;
+    }
+
+    @include respond-to(sm) {
+        top: 70px;
+    }
+}
+
+.mobile-appbar {
+    display: none;
+    background-color: var(--mui-palette-background-default);
+
+    @include respond-to(md) {
+        display: block;
+        position: fixed;
+        top: 64px;
+        z-index: 1100;
+    }
+}
+
+.desktop-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 1199;
+    background-color: var(--mui-palette-background-default);
+    padding: 8px 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+    @include respond-to(md) {
+        display: none;
+    }
+}
+
+.main-content {
+    padding-top: 150px;
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+
+    @include respond-to(md) {
+        padding-top: 125px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @include respond-to(sm) {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.mobile-drawer {
+    width: 250px;
+    background-color: var(--mui-palette-background-paper);
+
+    @media (min-width: map.get($breakpoints, md)) {
+        display: none;
+    }
+}
+
+.menu-item {
+    display: inline-block;
+    position: relative;
+}
+
+.menu-chip {
+    font-family: "Kalimati";
+    margin: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    size: medium;
+
+    &.active,
+    &:hover {
+        background-color: var(--mui-palette-primary-main);
+        color: var(--mui-palette-primary-contrastText);
+    }
+}
+
+.submenu-paper {
+    background-color: var(--mui-palette-background-paper);
+}
+
+.submenu-item,
+.mobile-submenu-item,
+.drawer-item,
+.drawer-submenu-item {
+    &.active,
+    &:hover {
+        background-color: var(--mui-palette-action-hover);
+    }
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-title,
+.submenu-item,
+.mobile-submenu-item,
+.drawer-item,
+.drawer-submenu-item {
+    font-family: "Kalimati";
+}

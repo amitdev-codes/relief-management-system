@@ -1,0 +1,147 @@
+// Define breakpoints based on MUI breakpoints
+$breakpoint-xs: 0px;
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1920px;
+
+// Mixin for responsive padding
+@mixin responsive-padding {
+    padding: 16px;
+
+    @media (min-width: $breakpoint-sm) {
+        padding: 24px;
+    }
+    @media (min-width: $breakpoint-md) {
+        padding: 32px;
+    }
+    @media (min-width: $breakpoint-lg) {
+        padding: 40px;
+    }
+    @media (min-width: $breakpoint-xl) {
+        padding: 48px;
+    }
+}
+.app-wrapper {
+    padding: 16px;
+
+    // Add responsiveness for larger screens
+    @media (min-width: 768px) {
+        padding: 32px;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 64px;
+    }
+}
+.theme-toggle-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+
+    // Add responsiveness for smaller devices
+    @media (max-width: 768px) {
+        top: 20px;
+        right: 20px;
+    }
+
+    @media (max-width: 480px) {
+        top: 30px;
+        right: 30px;
+    }
+}
+
+// Box Component
+.box {
+    width: 100%;
+    margin: 0 auto;
+    @include responsive-padding;
+}
+
+// Container Component
+.container {
+    max-width: 100%;
+    @include responsive-padding;
+}
+
+// Card Component
+.card {
+    margin: 1rem;
+
+    @media (min-width: $breakpoint-sm) {
+        margin: 1.25rem;
+    }
+    @media (min-width: $breakpoint-md) {
+        margin: 1.5rem;
+    }
+    @media (min-width: $breakpoint-lg) {
+        margin: 1.75rem;
+    }
+
+    .card-header {
+        font-size: 1rem;
+
+        @media (min-width: $breakpoint-sm) {
+            font-size: 0.875rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+            font-size: 1.125rem;
+        }
+    }
+
+    .card-content {
+        font-size: 1rem;
+
+        @media (min-width: $breakpoint-sm) {
+            font-size: 0.875rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+            font-size: 1.125rem;
+        }
+    }
+}
+
+// Drawer Component
+.drawer {
+    width: 240px;
+    @include responsive-padding;
+}
+
+// Typography and Chips
+.typography,
+.chip {
+    font-size: 1rem;
+
+    @media (max-width: $breakpoint-sm) {
+        font-size: 0.875rem;
+    }
+    @media (min-width: $breakpoint-xl) {
+        font-size: 1.125rem;
+    }
+}
+
+// DataGrid Component
+.datagrid {
+    .MuiDataGrid-cell {
+        font-size: 0.875rem;
+
+        @media (max-width: $breakpoint-sm) {
+            font-size: 0.75rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+            font-size: 1rem;
+        }
+    }
+
+    .MuiDataGrid-columnHeader {
+        font-size: 1rem;
+
+        @media (max-width: $breakpoint-sm) {
+            font-size: 0.875rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+            font-size: 1.125rem;
+        }
+    }
+}

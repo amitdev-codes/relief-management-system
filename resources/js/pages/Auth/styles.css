@@ -1,0 +1,24 @@
+@keyframes scaleBackground {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.main-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/landingImages/bhaktapur2.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: scaleBackground 10s infinite alternate;
+    z-index: 0;
+}

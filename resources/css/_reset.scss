@@ -1,0 +1,108 @@
+// Import variables
+@use "variables" as *;
+
+// Reset
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// HTML & Body setup
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: $font-family-primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    line-height: 1.5;
+    color: $text-primary;
+    background-color: $background-default;
+}
+
+// Remove list styles
+ul,
+ol {
+    list-style: none;
+}
+
+// Remove default button styles
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+// Links
+a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Images
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+// Form elements
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+// Tables
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+// Remove default fieldset styles
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+// Focus outline
+:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $grey-100;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $grey-400;
+    border-radius: $border-radius-sm;
+
+    &:hover {
+        background: $grey-600;
+    }
+}

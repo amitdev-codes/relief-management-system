@@ -1,0 +1,59 @@
+.main-header .main-menu ul li a {
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: large;
+    // color: #f9f9f9;
+}
+.main-menu {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+
+    .fixed-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    // Uncomment the following line if you need to set a background color for .main-menu
+    // background-color: red;
+
+    #navigation {
+        li {
+            position: relative;
+
+            &:hover > ul {
+                display: grid;
+            }
+
+            ul {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 140px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                z-index: 1;
+
+                li {
+                    // padding: 5px 5px;
+
+                    &:hover {
+                        background-color: #ddd;
+                    }
+
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        display: block;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
